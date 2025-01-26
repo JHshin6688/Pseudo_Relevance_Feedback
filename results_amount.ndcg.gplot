@@ -1,0 +1,13 @@
+set xlabel "Rank"
+set ylabel "NDCG"
+
+set terminal postscript color
+set size 0.75,0.75
+
+set style data linespoints
+set key top right
+
+set xrange [1:10]
+set yrange [0:1]
+
+plot 'ir/results_amount_0.ndcg' title "m=0", 'ir/results_amount_1.ndcg' title "m=1", 'ir/results_amount_2.ndcg' title "m=2", 'ir/results_amount_5.ndcg' title "m=5", 'ir/results_amount_10.ndcg' title "m=10", 'ir/results_amount_15.ndcg' title "m=15", 'ir/results_amount_30.ndcg' title "m=30"

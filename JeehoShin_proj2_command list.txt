@@ -1,0 +1,23 @@
+<trace>
+java ir.eval.ExperimentRated -pseudofeedback 2 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results
+
+<amount>
+java ir.eval.ExperimentRated -pseudofeedback 0 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_amount_0
+java ir.eval.ExperimentRated -pseudofeedback 1 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_amount_1
+java ir.eval.ExperimentRated -pseudofeedback 2 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_amount_2
+java ir.eval.ExperimentRated -pseudofeedback 5 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_amount_5
+java ir.eval.ExperimentRated -pseudofeedback 10 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_amount_10
+java ir.eval.ExperimentRated -pseudofeedback 15 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_amount_15
+java ir.eval.ExperimentRated -pseudofeedback 30 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_amount_30
+
+gnuplot ir/results_amount.gplot | ps2pdf - ir/amount_results_rp.pdf
+gnuplot ir/results_amount.ndcg.gplot | ps2pdf - ir/amount_results_ndcg.pdf
+
+<beta>
+java ir.eval.ExperimentRated -pseudofeedback 0 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_beta_def
+java ir.eval.ExperimentRated -pseudofeedback 2 -feedbackparams 1.0 0.1 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_beta_01
+java ir.eval.ExperimentRated -pseudofeedback 2 -feedbackparams 1.0 0.5 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_beta_05
+java ir.eval.ExperimentRated -pseudofeedback 2 -feedbackparams 1.0 1.0 1.0 /u/mooney/ir-code/corpora/cf/ /u/mooney/ir-code/queries/cf/queries-rated /u/jeeho68/ir/results_beta_10
+
+gnuplot ir/results_beta.gplot | ps2pdf - ir/beta_results_rp.pdf
+gnuplot ir/results_beta.ndcg.gplot | ps2pdf - ir/beta_results_ndcg.pdf
